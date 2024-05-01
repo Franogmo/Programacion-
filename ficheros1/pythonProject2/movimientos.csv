@@ -1,0 +1,8 @@
+cuenta,tipo,cantidad,receptortransferencia
+1805983063,Creación de cuenta,0,
+1805983063,Ingreso,2000,
+1805983063,Retirada,600,
+1805983063,Retirada,55,
+4898360208,Transferencia,100,1805983063
+1805983063,Transferencia,250,4175662728
+4175662728,Transferencia,22,1805983063

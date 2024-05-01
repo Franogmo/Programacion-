@@ -8,7 +8,7 @@ Project start date: 15th of March 2024. Last update: 15th of March 2024.
 class PasswordControl:
 
     def __init__(self):
-        self.__passwords = {"Puma": "12345", "Jellyfish": "67890", "Bear": "01020", "Amoeba": "42069"}
+        self.__passwords = {"Puma": "12345", "Jellyfish": "67890", "Bear": "01020", "Amoeba": "42069", "Shark": "12128"}
 
     def access(self):
         username = input("Introduce tu nombre de usuario: ")

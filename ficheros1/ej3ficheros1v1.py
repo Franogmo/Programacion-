@@ -12,6 +12,9 @@ from random import randint
 
 @typechecked
 class Movement(ABC):
+    """
+    A Bank Account Movement
+    """
 
     def __init__(self):
         pass
@@ -19,10 +22,20 @@ class Movement(ABC):
 
 @typechecked
 class InternalMovement(Movement):
+    """
+    A bank account movement that only involves 1 account. Son of the Movement class.
+    """
 
     ALLOWED_INTERNAL_MOVEMENTS = ["Ingreso", "Retirada", "Creación de cuenta"]
 
     def __init__(self, movement_type: str, amount: float, final_balance: float, source_account: str):
+        """
+
+        :param movement_type: self.__errorcheck(movement_type)
+        :param amount: number
+        :param final_balance: number
+        :param source_account: str
+        """
         super().__init__()
         self.__movement_type = self.__errorcheck(movement_type)
         self.__amount = amount
@@ -46,6 +59,12 @@ class InternalMovement(Movement):
         return self.__source_account
 
     def __errorcheck(self, checked_value):
+        """
+
+        :param checked_value:
+        :return: The input value
+        :raises: A custom error if the movement is not allowed.
+        """
         if checked_value not in InternalMovement.ALLOWED_INTERNAL_MOVEMENTS:
             raise InternalMovementError
         return checked_value
@@ -60,9 +79,20 @@ class InternalMovement(Movement):
 
 @typechecked
 class Transference(Movement):
+    """
+    A bank account movement that only involves 1 account. Son of the Movement class.
+    """
 
     def __init__(self, amount: float, source_account: str,
                  receiving_account: str, this_account: str, this_accounts_final_balance: float):
+        """
+
+        :param amount: number
+        :param source_account: str
+        :param receiving_account: str
+        :param this_account: str
+        :param this_accounts_final_balance: number
+        """
         super().__init__()
         self.__movement_type = "Transferencia"
         self.__amount = amount
@@ -105,12 +135,21 @@ class Transference(Movement):
 
 
 @typechecked
-class BankAccount:  # I notice the warnings, but I consider that neither of those methods must be static.
+class BankAccount:
+    """
+    A bank account.
+
+    I notice the warnings, but I consider that neither of those methods must be static.
+    """
 
     __EXISTING_ACCOUNT_NUMBERS = []
     __MOVEMENTS_REGISTER = {}
 
     def __init__(self, balance: float = 0):
+        """
+
+        :param balance: number
+        """
         self.__balance = self.__errorproof(balance)
         self.__account_number = self.__generate_account_number()
         BankAccount.__MOVEMENTS_REGISTER[self.__account_number] = [InternalMovement("Creación de cuenta",
@@ -127,12 +166,20 @@ class BankAccount:  # I notice the warnings, but I consider that neither of thos
 
     @property
     def movements(self):
+        """
+
+        :return: A str with the movements.
+        """
         movements = f"Movimientos de la cuenta {self.__account_number}:\n-----------------------\n"
         for n in range(len(BankAccount.__MOVEMENTS_REGISTER[self.__account_number])):
             movements += f"{BankAccount.__MOVEMENTS_REGISTER[self.__account_number][n]}\n"
         return movements
 
     def __generate_account_number(self):
+        """
+
+        :return: A valid non repeated account number in a str format
+        """
         while True:
             aspiring_number = str(10000000000 + randint(0, 99999999999))[1:]
             if aspiring_number not in BankAccount.__EXISTING_ACCOUNT_NUMBERS:
@@ -140,16 +187,33 @@ class BankAccount:  # I notice the warnings, but I consider that neither of thos
                 return aspiring_number
 
     def __errorproof(self, amount: float):
+        """
+
+        :param amount:
+        :return: the input value
+        :raises: A custum error if the input value < 0
+        """
         if amount < 0:
             raise NegativeBalanceError
         return amount
 
     def deposit(self, amount: float,  transference_warning: bool = False):
+        """
+        Deposits money in an account.
+        :param amount:
+        :param transference_warning:
+        """
         self.__balance += self.__errorproof(amount)
         if not transference_warning:
             self.__register_movement(1, amount)
 
     def withdraw(self, amount: float,  transference_warning: bool = False):
+        """
+        Withdraws money in an account
+
+        :param amount:
+        :param transference_warning:
+        """
         self.__errorproof(amount)
         if amount > self.__balance:
             raise ExcessiveWithdrawalError
@@ -159,10 +223,22 @@ class BankAccount:  # I notice the warnings, but I consider that neither of thos
         return amount
 
     def transfer(self, receiver: BankAccount, amount: float):
+        """
+        Transfers money between 2 accounts
+
+        :param receiver:
+        :param amount:
+        """
         receiver.deposit(self.withdraw(amount, True), True)
         self.__register_transference(receiver, amount)
 
     def __register_movement(self, operation_code: int, amount: float = 0):
+        """
+        Registers internal movements
+
+        :param operation_code:
+        :param amount:
+        """
         if operation_code == 1:
             BankAccount.__MOVEMENTS_REGISTER[self.__account_number].append(InternalMovement("Ingreso",
                                                                                             amount, self.__balance,
@@ -176,6 +252,12 @@ class BankAccount:  # I notice the warnings, but I consider that neither of thos
             raise RegisterMovementError
 
     def __register_transference(self, other: BankAccount, amount: float):
+        """
+        Registers transferences
+
+        :param other:
+        :param amount:
+        """
         BankAccount.__MOVEMENTS_REGISTER[self.__account_number].append(Transference(amount, self.__account_number,
                                                                                     other.__account_number,
                                                                                     self.__account_number,

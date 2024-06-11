@@ -6,6 +6,13 @@ Start date: 4th of April 2024. Last version: 4th of April 2024.
 
 
 def is_prime(number):
+    """
+    Detects if a number is prime
+
+    :param number:
+    :return: bool
+    :raises: Value error if it receives a float
+    """
     if number - int(number) != 0:
         raise ValueError("is_prime function cannot receive floating numbers.")
     if number < 2:
@@ -25,6 +32,10 @@ def is_prime(number):
 
 
 def main():
+    """
+
+    :return: A txt with a list of prime numbers in it
+    """
     prime_document = open("primedocument.txt", "wt")
     for n in range(501):
         if is_prime(n):

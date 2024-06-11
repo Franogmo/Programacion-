@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ej3ficheros1v1 module &mdash; documentación de ficheros - 1.2.3</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=e296b5ac"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=efdbd0b9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="ej2ficheros1v1 module" href="ej2ficheros1v1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ficheros
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ficheros1</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ej1ficheros1v1.html">ej1ficheros1v1 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ej2ficheros1v1.html">ej2ficheros1v1 module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ej3ficheros1v1 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.BankAccount"><code class="docutils literal notranslate"><span class="pre">BankAccount</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.BankAccount.account_number"><code class="docutils literal notranslate"><span class="pre">BankAccount.account_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.BankAccount.balance"><code class="docutils literal notranslate"><span class="pre">BankAccount.balance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.BankAccount.deposit"><code class="docutils literal notranslate"><span class="pre">BankAccount.deposit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.BankAccount.movements"><code class="docutils literal notranslate"><span class="pre">BankAccount.movements</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.BankAccount.print_movements"><code class="docutils literal notranslate"><span class="pre">BankAccount.print_movements()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.BankAccount.transfer"><code class="docutils literal notranslate"><span class="pre">BankAccount.transfer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.BankAccount.withdraw"><code class="docutils literal notranslate"><span class="pre">BankAccount.withdraw()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.ExcessiveWithdrawalError"><code class="docutils literal notranslate"><span class="pre">ExcessiveWithdrawalError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.InternalMovement"><code class="docutils literal notranslate"><span class="pre">InternalMovement</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.InternalMovement.ALLOWED_INTERNAL_MOVEMENTS"><code class="docutils literal notranslate"><span class="pre">InternalMovement.ALLOWED_INTERNAL_MOVEMENTS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.InternalMovement.amount"><code class="docutils literal notranslate"><span class="pre">InternalMovement.amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.InternalMovement.final_balance"><code class="docutils literal notranslate"><span class="pre">InternalMovement.final_balance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.InternalMovement.movement_type"><code class="docutils literal notranslate"><span class="pre">InternalMovement.movement_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.InternalMovement.source_account"><code class="docutils literal notranslate"><span class="pre">InternalMovement.source_account</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.InternalMovementError"><code class="docutils literal notranslate"><span class="pre">InternalMovementError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.Movement"><code class="docutils literal notranslate"><span class="pre">Movement</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.NegativeBalanceError"><code class="docutils literal notranslate"><span class="pre">NegativeBalanceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.RegisterMovementError"><code class="docutils literal notranslate"><span class="pre">RegisterMovementError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.Transference"><code class="docutils literal notranslate"><span class="pre">Transference</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.Transference.amount"><code class="docutils literal notranslate"><span class="pre">Transference.amount</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.Transference.movement_type"><code class="docutils literal notranslate"><span class="pre">Transference.movement_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.Transference.receiving_account"><code class="docutils literal notranslate"><span class="pre">Transference.receiving_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.Transference.source_account"><code class="docutils literal notranslate"><span class="pre">Transference.source_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.Transference.this_account"><code class="docutils literal notranslate"><span class="pre">Transference.this_account</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ej3ficheros1v1.Transference.this_accounts_final_balance"><code class="docutils literal notranslate"><span class="pre">Transference.this_accounts_final_balance</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ej3ficheros1v1.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ficheros</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">ficheros1</a></li>
+      <li class="breadcrumb-item active">ej3ficheros1v1 module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ej3ficheros1v1.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ej3ficheros1v1">
+<span id="ej3ficheros1v1-module"></span><h1>ej3ficheros1v1 module<a class="headerlink" href="#module-ej3ficheros1v1" title="Link to this heading"></a></h1>
+<p>Goal of the program: a bank account class (now with dictionaries)
+by Fran Ogallas
+Starting date: 5th of March 2024. Last version: 11th of March 2024.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">BankAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">balance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.BankAccount" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A bank account.</p>
+<p>I notice the warnings, but I consider that neither of those methods must be static.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount.account_number">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">account_number</span></span><a class="headerlink" href="#ej3ficheros1v1.BankAccount.account_number" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount.balance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">balance</span></span><a class="headerlink" href="#ej3ficheros1v1.BankAccount.balance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount.deposit">
+<span class="sig-name descname"><span class="pre">deposit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transference_warning</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.BankAccount.deposit" title="Link to this definition"></a></dt>
+<dd><p>Deposits money in an account.
+:param amount:
+:param transference_warning:</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount.movements">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">movements</span></span><a class="headerlink" href="#ej3ficheros1v1.BankAccount.movements" title="Link to this definition"></a></dt>
+<dd><p>A str with the movements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>return</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount.print_movements">
+<span class="sig-name descname"><span class="pre">print_movements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.BankAccount.print_movements" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount.transfer">
+<span class="sig-name descname"><span class="pre">transfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ej3ficheros1v1.BankAccount" title="ej3ficheros1v1.BankAccount"><span class="pre">BankAccount</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.BankAccount.transfer" title="Link to this definition"></a></dt>
+<dd><p>Transfers money between 2 accounts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>receiver</strong></p></li>
+<li><p><strong>amount</strong></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ej3ficheros1v1.BankAccount.withdraw">
+<span class="sig-name descname"><span class="pre">withdraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transference_warning</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.BankAccount.withdraw" title="Link to this definition"></a></dt>
+<dd><p>Withdraws money in an account</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong></p></li>
+<li><p><strong>transference_warning</strong></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ej3ficheros1v1.ExcessiveWithdrawalError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">ExcessiveWithdrawalError</span></span><a class="headerlink" href="#ej3ficheros1v1.ExcessiveWithdrawalError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ej3ficheros1v1.InternalMovement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">InternalMovement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">movement_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_balance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.InternalMovement" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ej3ficheros1v1.Movement" title="ej3ficheros1v1.Movement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Movement</span></code></a></p>
+<p>A bank account movement that only involves 1 account. Son of the Movement class.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ej3ficheros1v1.InternalMovement.ALLOWED_INTERNAL_MOVEMENTS">
+<span class="sig-name descname"><span class="pre">ALLOWED_INTERNAL_MOVEMENTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Ingreso',</span> <span class="pre">'Retirada',</span> <span class="pre">'Creación</span> <span class="pre">de</span> <span class="pre">cuenta']</span></em><a class="headerlink" href="#ej3ficheros1v1.InternalMovement.ALLOWED_INTERNAL_MOVEMENTS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.InternalMovement.amount">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">amount</span></span><a class="headerlink" href="#ej3ficheros1v1.InternalMovement.amount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.InternalMovement.final_balance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">final_balance</span></span><a class="headerlink" href="#ej3ficheros1v1.InternalMovement.final_balance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.InternalMovement.movement_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">movement_type</span></span><a class="headerlink" href="#ej3ficheros1v1.InternalMovement.movement_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.InternalMovement.source_account">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">source_account</span></span><a class="headerlink" href="#ej3ficheros1v1.InternalMovement.source_account" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ej3ficheros1v1.InternalMovementError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">InternalMovementError</span></span><a class="headerlink" href="#ej3ficheros1v1.InternalMovementError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Movement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">Movement</span></span><a class="headerlink" href="#ej3ficheros1v1.Movement" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>A Bank Account Movement</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ej3ficheros1v1.NegativeBalanceError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">NegativeBalanceError</span></span><a class="headerlink" href="#ej3ficheros1v1.NegativeBalanceError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ej3ficheros1v1.RegisterMovementError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">RegisterMovementError</span></span><a class="headerlink" href="#ej3ficheros1v1.RegisterMovementError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Transference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">Transference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiving_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">this_account</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">this_accounts_final_balance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.Transference" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ej3ficheros1v1.Movement" title="ej3ficheros1v1.Movement"><code class="xref py py-class docutils literal notranslate"><span class="pre">Movement</span></code></a></p>
+<p>A bank account movement that only involves 1 account. Son of the Movement class.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Transference.amount">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">amount</span></span><a class="headerlink" href="#ej3ficheros1v1.Transference.amount" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Transference.movement_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">movement_type</span></span><a class="headerlink" href="#ej3ficheros1v1.Transference.movement_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Transference.receiving_account">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">receiving_account</span></span><a class="headerlink" href="#ej3ficheros1v1.Transference.receiving_account" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Transference.source_account">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">source_account</span></span><a class="headerlink" href="#ej3ficheros1v1.Transference.source_account" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Transference.this_account">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">this_account</span></span><a class="headerlink" href="#ej3ficheros1v1.Transference.this_account" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ej3ficheros1v1.Transference.this_accounts_final_balance">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">this_accounts_final_balance</span></span><a class="headerlink" href="#ej3ficheros1v1.Transference.this_accounts_final_balance" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ej3ficheros1v1.main">
+<span class="sig-prename descclassname"><span class="pre">ej3ficheros1v1.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ej3ficheros1v1.main" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="ej2ficheros1v1.html" class="btn btn-neutral float-left" title="ej2ficheros1v1 module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2024, yo.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

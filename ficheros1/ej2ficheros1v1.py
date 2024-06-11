@@ -6,6 +6,9 @@ Start date: 4th of April 2024. Last version: 4th of April 2024.
 
 
 def main():
+    """
+    Reads txt.
+    """
     prime_list = open("primedocument.txt", "rt")
     current_line = prime_list.readline()
     while current_line != "":
